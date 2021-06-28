@@ -1,4 +1,5 @@
-//importando img no react  com webpack
+
+
 import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
@@ -8,7 +9,7 @@ import { Button } from '../components/Button';
 import '../styles/auth.scss';
 
 
-export function Home() {
+export function NewRoom() {
     return(
         <div id="page-auth"> 
             <aside>
@@ -19,20 +20,19 @@ export function Home() {
             <main>
                 <div>
                     <img src={logoImg} alt=" Letmeask"/>
-                    <button className="create-room">
-                        <img src={googleIconImg} alt="Logo do Google "/>
-                        Crie sua Sala com o Google
-                    </button>
-                    <div className="separator"> ou entre  em  uma  sala</div>
+                    <h2>Criar uma nova sala</h2>
                     <form>
                         <input
                             type="text"
-                            placeholder="Digite o codigo da sala"
+                            placeholder="Nome da sala"
                         />
                         <Button type="submit">
-                            Entrar na sala
+                            Criar Sala
                         </Button>
                     </form>
+                    <p>
+                        Quer entrar en uma sala já Existente?<a href="#">Clique Aqui</a>
+                    </p>
                 </div>
             </main>
         </div>
