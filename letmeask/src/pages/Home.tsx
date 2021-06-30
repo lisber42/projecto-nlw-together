@@ -3,6 +3,7 @@ import {useHistory} from'react-router-dom'
 
 
 
+
 import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
@@ -11,12 +12,20 @@ import googleIconImg from '../assets/images/google-icon.svg';
 import { Button } from '../components/Button';
 import '../styles/auth.scss';
 
+import { useContext } from 'react';
+import { AuthContext } from '../App';
+
+
 
 export function Home() {
-    //criando um HOOKS
     const history = useHistory();
+    const { user, signInWithGoogle } = useContext(AuthContext)
 
-    function navigateToNewRoom() {
+    async function handleCreateRoom() {
+        if (!user) {
+            await signInWithGoogle() 
+        }
+        
         history.push('/rooms/new');
     }
 
@@ -28,9 +37,10 @@ export function Home() {
                <p>Tire as duvidas de sua audiencia em tempo-real</p> 
             </aside>
             <main>
+               
                 <div>
                     <img src={logoImg} alt=" Letmeask"/>
-                    <button onClick={navigateToNewRoom} className="create-room">
+                    <button onClick={handleCreateRoom} className="create-room">
                         <img src={googleIconImg} alt="Logo do Google "/>
                         Crie sua Sala com o Google
                     </button>
