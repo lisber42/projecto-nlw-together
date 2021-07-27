@@ -1,7 +1,7 @@
 # Projecto-nlw6-together
 
 ## App LetMeask
-Aplicativo desenvolvido durante evento nlw-6-Together - missão ReactJs, junto a RockeSet.
+Aplicativo desenvolvido durante evento nlw-6-Together - missão ReactJs, junto a RocketSeat.
 
 ## STATUS
 Em Desenvolvimento
